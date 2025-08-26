@@ -1,0 +1,30 @@
+@startuml
+
+class Client {
+    - id : string 
+    - name : string
+    - cnpj : string
+    - city_code : string
+}
+
+class Service {
+    - id : string
+    - description : string
+    - service_code : string
+    - unit_value : double    
+}
+
+class Invoice {
+    - id : string
+    - month : string
+    - year : int
+    - value : double 
+    - status : string 
+    - xml_path : string
+    - pdf_path : string
+}
+
+Client "1" --> "*" Invoice
+Service "1" --> "*" Invoice
+
+@enduml
