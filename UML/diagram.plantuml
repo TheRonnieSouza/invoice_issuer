@@ -1,20 +1,22 @@
 @startuml
 
-class Client {
+class Clients {
     - id : string 
     - name : string
     - cnpj : string
     - city_code : string
 }
 
-class Service {
+class Services {
     - id : string
     - description : string
-    - service_code : string
-    - unit_value : double    
+    - service_code : int
+    - service_description : string
+    - nbs_code : int
+    - nbs_description : string
 }
 
-class Invoice {
+class Invoices {
     - id : string
     - month : string
     - year : int
@@ -24,7 +26,7 @@ class Invoice {
     - pdf_path : string
 }
 
-Client "1" --> "*" Invoice
-Service "1" --> "*" Invoice
+Clients "1" --> "*" Invoices
+Services "1" --> "*" Invoices
 
 @enduml
